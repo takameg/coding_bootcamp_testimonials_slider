@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+  
+</head>
+<body>
+  <div class="container">
+    <div class="dt-right">
+      <img id="main-img" src="images/image1.jpg" alt="Photo of Tanya">
+      <div class="button-area">
+        <button id="prev"><img src="images/icon-prev.svg"></button>
+        <button id="next"><img src="images/icon-next.svg"></button>
+      </div>
+    </div>
+
+    <div class="dt-left">
+      <div id="msg1">
+        <p class="msg">“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”</p>
+        <p class="name">Tanya Sinclair</p>
+        <p class="title">UX Engineer</p>
+      </div>
+      <div id="msg2">
+        <p class="msg">“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”</p>
+        <p class="name">John Tarkpor</p>
+        <p class="title">Junior Front-end Developer</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var msg1 = document.getElementById("msg1");
+    var msg2 = document.getElementById("msg2");
+    var mainImg = document.getElementById("main-img");
+
+    prev.onclick = function() {
+      msg1.style.display = "block";
+      msg2.style.display = "none";
+      mainImg.src = "images/image1.jpg"
+    }
+
+    next.onclick = function() {
+      msg1.style.display = "none";
+      msg2.style.display = "block";
+      mainImg.src = "images/image2.jpg"
+    }
+  </script>
+
+</body>
+</html>
