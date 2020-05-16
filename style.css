@@ -56,12 +56,12 @@ button:hover {
 }
 
 button img {
-  padding: 2px 6px 0 6px;
-  width: 10px;
+  padding: 5px 5px 0 5px;
+  width: 9px;
 }
 
 button img:hover {
-  width: 13px;
+  width: 12px;
 }
 
 .dt-left {
