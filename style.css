@@ -16,6 +16,74 @@ body {
   background-position-y: bottom;
 }
 
+@keyframes prev-img1 {
+  0% {
+    transform: translate(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(-50px, -15px);
+    opacity: 0.5;
+  }
+ 
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }  
+}
+
+@keyframes prev-img2 {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(50px, 15px);
+    opacity: 0.5;
+  }
+ 
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }  
+}
+
+@keyframes next-img1 {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50px, 15px);
+    opacity: 0.5;
+  }
+ 
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }  
+}
+
+@keyframes next-img2 {
+  0% {
+    transform: translate(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(50px, -15px);
+    opacity: 0.5;
+  }
+ 
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }  
+}
+
 .dt-right {
   background-image: url("images/pattern-bg.svg");
   background-size: contain;
@@ -23,11 +91,21 @@ body {
   position: relative;
 }
 
-#main-img {
+#main-img1, #main-img2 {
   padding-top: 30px;
   width: 78%;
   border-radius: 5px;
   box-shadow: 0px 50px 35px -35px #2020469a;
+}
+
+#main-img1 {
+  opacity: 1; 
+}
+
+#main-img2 {
+  position: absolute;
+  right: 35px;
+  opacity: 0;
 }
 
 .button-area {
@@ -72,7 +150,7 @@ button img:hover {
   background-repeat: no-repeat;
   background-size: 58px;
   background-position-x: center;
-  /* position: relative; when change by opacity*/
+  position: relative;  /* to change msg */
 }
 
 .dt-left img {
@@ -99,26 +177,26 @@ button img:hover {
   margin: 0 0 55px 0;
 }
 
-/* change by display */
-#msg1 {
-  display: block;  /* change to none*/
-}
-
-#msg2 {
-  display: none; /* change to block*/
-}
-
-/*  change by opacity 
+/* change by display 
 #msg1 {
   display: block;  
-  opacity: 0;
+} 
+
+#msg2 {
+  display: none; 
+}
+*/
+
+/*  change by opacity */
+#msg1 {
+  opacity: 1;
 }
 
 #msg2 {
-  position: relative;
-  bottom: 289px;
-  opacity: 1;
-} */
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+} 
 
 .attribution {
   font-size: 10px;
@@ -157,10 +235,14 @@ button img:hover {
     position: relative;
   }
   
-  #main-img {
+  #main-img1, #main-img2 {
     margin: 32px 0 0 60px;
     width: 70%;
     box-shadow: 0px 50px 35px -35px #2020469a;
+  }
+
+  #main-img2 { 
+    right: 83px;
   }
   
   .button-area {
@@ -199,7 +281,11 @@ button img:hover {
     padding-top: 35px;
     font-size: 32.5px;
   }
-  
+
+  #msg2 {
+   top: 0;
+  }
+
   .name, .title {
     margin: 40px 10px 0 0;
     font-size: 20px;

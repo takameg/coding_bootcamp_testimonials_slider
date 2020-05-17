@@ -16,7 +16,8 @@
 <body>
   <div class="container">
     <div class="dt-right">
-      <img id="main-img" src="images/image1.jpg" alt="Photo of Tanya">
+      <img id="main-img1" src="images/image1.jpg" alt="Photo of Tanya">
+      <img id="main-img2" src="images/image2.jpg" alt="Photo of John">
       <div class="button-area">
         <button id="prev"><img src="images/icon-prev.svg" alt="Arrow previous"></button>
         <button id="next"><img src="images/icon-next.svg" alt="Arrow next"></button>
@@ -42,18 +43,29 @@
     var next = document.getElementById("next");
     var msg1 = document.getElementById("msg1");
     var msg2 = document.getElementById("msg2");
-    var mainImg = document.getElementById("main-img");
+    var mainImg1 = document.getElementById("main-img1");
+    var mainImg2 = document.getElementById("main-img2");
 
     prev.onclick = function() {
-      msg1.style.display = "block";
-      msg2.style.display = "none";
-      mainImg.src = "images/image1.jpg"
+      msg1.style.transition = "all 1s";
+      msg1.style.opacity = 1;
+      msg2.style.transition = "all 1s";
+      msg2.style.opacity = 0;
+      mainImg1.style.animation = "prev-img1 1s";
+      mainImg1.style.opacity = 1;
+      mainImg2.style.animation = "prev-img2 1s";
+      mainImg2.style.opacity = 0;
     }
 
     next.onclick = function() {
-      msg1.style.display = "none";
-      msg2.style.display = "block";
-      mainImg.src = "images/image2.jpg"
+      msg1.style.transition = "all 1s";
+      msg1.style.opacity = 0;
+      msg2.style.transition = "all 1s";
+      msg2.style.opacity = 1;
+      mainImg1.style.animation = "next-img1 1s";     
+      mainImg1.style.opacity = 0;
+      mainImg2.style.animation = "next-img2 1s";     
+      mainImg2.style.opacity = 1;
     }
   </script>
 
